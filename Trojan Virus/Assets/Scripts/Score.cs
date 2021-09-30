@@ -8,7 +8,7 @@ public class Score : MonoBehaviour
     [SerializeField] TextMeshProUGUI timee, brains;
     [SerializeField] Text score;
     [SerializeField] TextMeshProUGUI Info;
-
+   
     [SerializeField] public TextMeshProUGUI gameover;
     //[SerializeField] GameObject spark;
     [SerializeField] GameObject sc;
