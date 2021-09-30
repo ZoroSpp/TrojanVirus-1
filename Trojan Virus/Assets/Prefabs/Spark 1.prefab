@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 1590560194884610296}
   - component: {fileID: 6596876263770528849}
   - component: {fileID: 6840501753930906913}
+  - component: {fileID: 8561891043403658947}
   m_Layer: 6
   m_Name: Spark 1
   m_TagString: Player
@@ -329,3 +330,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &8561891043403658947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7197775319178752178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7aacb8fec5fc2744a13d0ee2ca73363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos: {fileID: 2145171908336134632}
+  speed: 40
+  SparkLs: {fileID: 7197775319178752178}
+  freezeTime: 1

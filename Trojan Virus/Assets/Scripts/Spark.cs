@@ -13,7 +13,7 @@ public class Spark : MonoBehaviour
     [SerializeField] float freezeTime;
     float freezeStart;
     public static int checkSt = 0;                    //running status of spark
-    public static bool checkClick = false, hasended = false;
+    public static bool checkClick = false, hasended = true;
 
     GameObject spark;
     // Start is called before the first frame update
@@ -27,6 +27,8 @@ public class Spark : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Return))
+            hasended = false;
         if (GameObject.Find("GridManager").GetComponent<Score>().xt >= 20)
             hasended = true;
 

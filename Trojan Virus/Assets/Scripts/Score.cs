@@ -15,12 +15,12 @@ public class Score : MonoBehaviour
     public float gamest, gplay_time;
 
     [SerializeField] GameObject spark;
-
     [SerializeField] TextMeshProUGUI Info2;
     public int scoreVal, xt, brainc = 4;
     int InVal, valChn;
     float infoST, infoST2;
     [SerializeField] float infoTP;
+    bool hasStart=false;
 
     bool checkbp = false, checkbm = false;
     int x = 0, y = 0, t = 1, n = 1;
@@ -37,7 +37,7 @@ public class Score : MonoBehaviour
         brains.text = "BRAINS: " + brainc + "/9";
         gamest = Time.time;
         gplay_time = 20.0f;
-
+        Info2.text = "Press ENTER to start";
         xt = 0;
         timee.text = "Time - " + xt;
         gameSt = Time.time;
@@ -50,15 +50,30 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            hasStart = true;
+            Info2.text = " ";
+        }
         brains.text = "BRAINS: " + brainc + "/9";
+        if(hasStart)
         xt = (int)(Time.time - gamest);
-        timee.text = "Time: " + xt + "s";
+        timee.text = "Time: " + xt + " s";
 
         if (xt >= 20)
         {
+            hasStart = false;
             timee.text = "Time: " + 20 + "s";
-            gameover.text = "Game Over!\nPress Enter\nTo Continue";
+            if (scoreVal < 150)
+            {
+                gameover.color = Color.red;
+                gameover.text = "Game Over!\n" + scoreVal + "\nPress Enter\nTo Continue";
+            }
+            else
+            {
+                gameover.color = Color.blue;
+                gameover.text = "Level complete!\n" + scoreVal + "\nPress Enter\nTo Continue";
+            }
             if (Input.GetKeyDown(KeyCode.Return))
                 sc.GetComponent<SceneSwitch>().scenechange();
         }
@@ -79,6 +94,7 @@ public class Score : MonoBehaviour
 
                             if (scoreVal >= t * 150)
                             {
+                                Info2.color = Color.green;
                                 checkbp = true;
                                 Info2.text = "You have gained a brain!!";
                                 t++;
@@ -86,6 +102,7 @@ public class Score : MonoBehaviour
                             }
                             else if (scoreVal <= -50 * n)
                             {
+                                Info2.color = Color.red;
                                 checkbm = true;
                                 Info2.text = "You have lost a brain!!";
                                 n++;
@@ -172,6 +189,7 @@ public class Score : MonoBehaviour
         {
             if (scoreVal < (t - 1) * 150)
             {
+                Info2.color = Color.red;
                 checkbp = false;
                 brainc--; t--;
             }
@@ -180,6 +198,7 @@ public class Score : MonoBehaviour
         {
             if (scoreVal > -50 * (n - 1))
             {
+                Info2.color = Color.green;
                 checkbm = false;
                 brainc++;
                 n--;
