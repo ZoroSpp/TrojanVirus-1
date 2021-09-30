@@ -42,9 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: UI
-    uniqueID: 3908339831
-    locked: 0
   - name: Spark
     uniqueID: 2251225439
+    locked: 0
+  - name: UI
+    uniqueID: 3908339831
     locked: 0

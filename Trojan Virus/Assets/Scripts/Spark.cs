@@ -67,7 +67,7 @@ public class Spark : MonoBehaviour
                                     }
                                     else
                                     {
-                                        GameObject.Find("GridManager").GetComponent<Score>().scoreVal -= 20;
+                                        GameObject.Find("GridManager").GetComponent<Score>().scoreVal -= 15;
                                     }
                                     speed = 40;
                                     GenerateSpark();
