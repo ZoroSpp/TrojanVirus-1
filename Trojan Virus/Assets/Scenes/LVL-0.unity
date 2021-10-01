@@ -707,7 +707,7 @@ SortingGroup:
   m_GameObject: {fileID: 467028498}
   m_Enabled: 1
   m_SortingLayerID: -2043741857
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!1 &499285199
 GameObject:
@@ -1455,6 +1455,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6840501753930906913, guid: b0e11d6ae496b2d44bad749668ef0da0, type: 3}
+      propertyPath: m_Radius
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6840501753930906913, guid: b0e11d6ae496b2d44bad749668ef0da0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7197775319178752178, guid: b0e11d6ae496b2d44bad749668ef0da0, type: 3}
       propertyPath: m_Name
       value: Spark 1
@@ -1587,7 +1595,7 @@ SortingGroup:
   m_GameObject: {fileID: 1369810322}
   m_Enabled: 1
   m_SortingLayerID: -2043741857
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!1 &1419566622
 GameObject:
@@ -2180,7 +2188,7 @@ SortingGroup:
   m_GameObject: {fileID: 1607689574}
   m_Enabled: 1
   m_SortingLayerID: -386627465
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
 --- !u!1 &1727078491
 GameObject:
