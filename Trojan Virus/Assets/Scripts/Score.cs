@@ -7,15 +7,15 @@ public class Score : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timee, brains;
     [SerializeField] Text score;
-    [SerializeField] TextMeshProUGUI Info;
+    [SerializeField] Text Info;
    
-    [SerializeField] public TextMeshProUGUI gameover;
+    [SerializeField] public Text gameover;
     //[SerializeField] GameObject spark;
     [SerializeField] GameObject sc;
     public float gamest, gplay_time;
 
     [SerializeField] GameObject spark;
-    [SerializeField] TextMeshProUGUI Info2;
+    [SerializeField] Text Info2;
     public int scoreVal, xt, brainc = 4;
     int InVal, valChn;
     float infoST, infoST2;
@@ -35,8 +35,9 @@ public class Score : MonoBehaviour
     {
 
         brains.text = "BRAINS: " + brainc + "/9";
-        gamest = Time.time;
+        
         gplay_time = 20.0f;
+        Info2.color = Color.green;
         Info2.text = "Press ENTER to start";
         xt = 0;
         timee.text = "Time - " + xt;
@@ -50,8 +51,9 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && !hasStart)
         {
+            gamest = Time.time;
             hasStart = true;
             Info2.text = " ";
         }
@@ -62,7 +64,6 @@ public class Score : MonoBehaviour
 
         if (xt >= 20)
         {
-            hasStart = false;
             timee.text = "Time: " + 20 + "s";
             if (scoreVal < 150)
             {
